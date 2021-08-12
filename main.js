@@ -20,8 +20,8 @@ function controlsFor(paddle,keys){
     paddle.style.top = pos + 'px';
   })
 }
-controlsFor(paddle1,['q','a'])
-controlsFor(paddle2,['o','l'])
+controlsFor(paddle1,['a','s'])
+controlsFor(paddle2,['k','l'])
 
 function start(){
     setTimeout( ()=> {ball.vx =3;  ball.vy = 0},1000);
