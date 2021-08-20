@@ -1,10 +1,11 @@
 
-var board   = document.querySelector('.board')
-var paddle1 = document.querySelector('.paddle.one')
-var paddle2 = document.querySelector('.paddle.two')
-var score1  = document.querySelector('.player.one')
-var score2  = document.querySelector('.player.two')
-var ball    = document.querySelector('.ball')
+const board   = document.querySelector('.board')
+const paddle1 = document.querySelector('.paddle.one')
+const paddle2 = document.querySelector('.paddle.two')
+const score1  = document.querySelector('.player.one')
+const score2  = document.querySelector('.player.two')
+const ball    = document.querySelector('.ball')
+
 
 
 function controlsFor(paddle,keys){
@@ -31,17 +32,18 @@ function start(){
     document.querySelector('.winner').style.display = 'none';
     paddle1.style.top = 312 + 'px';
     paddle2.style.top = 312 + 'px';
+    
 }
 
 
 function newRound(dir){
-
   ball.vx = dir;
   ball.vy = 0;
   ball.style.left = (board.offsetWidth/2) + 'px';
   ball.style.top  = (board.offsetHeight/2) + 'px';
   document.querySelector('.newgame').style.display = 'inline-block';
   document
+  
 }
 
 function checkCollision(paddle,ball){
@@ -103,9 +105,6 @@ function checkCollision(paddle,ball){
       firstscore.appendChild(textscore);
        document.querySelector('.scoreList').appendChild(firstscore);  
 }
-
-  
-
 }
 
 var timer = setInterval(t=>{
@@ -118,6 +117,6 @@ var timer = setInterval(t=>{
   posY += ball.vy
   ball.style.left = posX + 'px';
   ball.style.top  = posY + 'px';
-},16)
+},10)
 
 
